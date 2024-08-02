@@ -1,24 +1,27 @@
 from collections import namedtuple
 
 from .helpers import generate_id
-from .user import User
-from .movie import Movie
-
-Ticket = namedtuple('Ticket', ['id', 'user', 'movie'])
 
 
 class TicketFabrica:
-    __tickets = list()
+    __tickets = {}
 
-    def buyTicket(self, user: User, film: Movie) -> Ticket:
-        ticket = Ticket(generate_id(), user, film)
-        self.__tickets.append(ticket)
-        return ticket
+    def buyTicket(self, user: str, movie: str) -> str:
+        ticket_id = generate_id()
+        self.__tickets[ticket_id] = {
+            'user': user,
+            'movie': movie
+        }
+        return ticket_id
 
-    def cancelTicket(self, ticket: Ticket) -> bool:
+    def cancelTicket(self, ticket_id) -> bool:
         try:
-            index = self.__tickets.index(ticket)
-            self.__tickets.pop(index)
+            self.__tickets.pop(ticket_id)
             return True
         except Exception:
             return False
+
+    def showAllTickets(self):
+        print("# Вывод билетов:")
+        for ticket_id in self.__tickets.keys():
+            print(f"# {ticket_id}")

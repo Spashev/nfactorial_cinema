@@ -1,19 +1,15 @@
 from .helpers import generate_id
 
-from collections import namedtuple
-
-Movie = namedtuple('Movie', ['id', 'name'])
-
 
 class MovieFabrica:
-    __movies = list()
+    __movies = {}
 
-    def addMovie(self, movie_name: str) -> Movie:
-        movie = Movie(generate_id(), movie_name)
-        self.__movies.append(movie)
-        return movie
+    def addMovie(self, movie_name: str) -> str:
+        movie_id = generate_id()
+        self.__movies[movie_id] = movie_name
+        return movie_id
 
     def showAllMovies(self) -> None:
         print("# Вывод фильмов:")
-        for movie in self.__movies:
-            print(f"# {movie.id}. {movie.name.capitalize()}")
+        for movie_id, movie_name in self.__movies.items():
+            print(f"# {movie_id}. {movie_name.capitalize()}")
