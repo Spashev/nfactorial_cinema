@@ -1,8 +1,7 @@
 from .helpers import generate_id
-from collections import namedtuple
 
 
-class UserFabrica:
+class User:
     __users = {}
 
     def addUser(self, user_name: str) -> str:

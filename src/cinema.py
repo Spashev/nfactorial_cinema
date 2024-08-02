@@ -1,8 +1,7 @@
 from .helpers import generate_id
-from .ticket import TicketFabrica
-from .user import UserFabrica
-from .movie import MovieFabrica
+from .ticket import Ticket
+from .user import User
+from .movie import Movie
 
 
-class CinemaTicketSystem(UserFabrica, MovieFabrica, TicketFabrica):
-    ...
+class CinemaTicketSystem(User, Movie, Ticket): ...

@@ -1,7 +1,7 @@
 from .helpers import generate_id
 
 
-class MovieFabrica:
+class Movie:
     __movies = {}
 
     def addMovie(self, movie_name: str) -> str:

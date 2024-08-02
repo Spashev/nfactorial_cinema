@@ -1,9 +1,7 @@
-from collections import namedtuple
-
 from .helpers import generate_id
 
 
-class TicketFabrica:
+class Ticket:
     __tickets = {}
 
     def buyTicket(self, user: str, movie: str) -> str:
