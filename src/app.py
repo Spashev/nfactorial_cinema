@@ -24,8 +24,6 @@ def start():
     ticket3 = cinema.buyTicket(user3, movie3)
     ticket4 = cinema.buyTicket(user4, movie4)
 
-    print("################################")
-
     cancel1 = cinema.cancelTicket(ticket1)
     cancel2 = cinema.cancelTicket('a4b3f4ed-12a5-4781-963c-5b7750702374')
     cancel3 = cinema.cancelTicket(ticket2)
