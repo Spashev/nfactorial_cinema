@@ -2,6 +2,13 @@ from .helpers import generate_id
 
 
 class Movie:
+    """
+    class Movie
+    private attribute movies
+    methods:
+        addMovie
+        showAllMovies
+    """
     __movies = {}
 
     def addMovie(self, movie_name: str) -> str:

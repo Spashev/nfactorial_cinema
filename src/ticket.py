@@ -2,6 +2,14 @@ from .helpers import generate_id
 
 
 class Ticket:
+    """
+    class Ticket
+    private attribute tickets
+    methods:
+        buyTicket
+        cancelTicket
+        showAllTickets
+    """
     __tickets = {}
 
     def buyTicket(self, user: str, movie: str) -> str:
